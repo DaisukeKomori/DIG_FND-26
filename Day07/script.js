@@ -286,190 +286,190 @@
 //   }
   
 
-// *** hayato kubo ***
+// // *** hayato kubo ***
 
-  'use strict'
-  // 1行目に記載している 'use strict' は削除しないでください
+//   'use strict'
+//   // 1行目に記載している 'use strict' は削除しないでください
   
-  // ファイル全体で使用する tdd 変数を宣言
-  let expected;
-  let actual;
+//   // ファイル全体で使用する tdd 変数を宣言
+//   let expected;
+//   let actual;
   
-  //-----Q1-----
+//   //-----Q1-----
   
-  //解答
-  function greeting(name) {
-    if (typeof name === "string") {
-      if ((name).length !== 0) {
-        return "Hello, " + name + "!";
-      } else {
-        return "名前を入力してください。";
-      }
-    } else {
-      return "名前を入力してください。"
-    }
-  }
+//   //解答
+//   function greeting(name) {
+//     if (typeof name === "string") {
+//       if ((name).length !== 0) {
+//         return "Hello, " + name + "!";
+//       } else {
+//         return "名前を入力してください。";
+//       }
+//     } else {
+//       return "名前を入力してください。"
+//     }
+//   }
   
-  // テスト
-  console.log(greeting("Kana")); // => "Hello, Kana!"
-  console.log(greeting("Kimiko")); // => "Hello, Kimiko!"
-  
-  
-  //-----Q2-----
-  //解答
-  function average(num1, num2) {
-    if (typeof num1 === "number" && typeof num2 === "number") {
-      return (num1 + num2) /2;
-    } else if (typeof num1 === "number" && typeof num2 !== "number") {
-      return "数値を入力してください。（修正が必要な個所：" + num2 + " )"
-    } else if (typeof num1 !== "number" && typeof num2 === "number") {
-      return "数値を入力してください。（修正が必要な個所：" + num1 + " )"
-    } else {
-      return "数値を入力してください。（修正が必要な個所：" + num1 + "," + num2 + " )"
-    }
-  }
-  
-  // テスト
-  console.log(average(1, 2)); // => 1.5
-  console.log(average(100, 300)); // => 200
+//   // テスト
+//   console.log(greeting("Kana")); // => "Hello, Kana!"
+//   console.log(greeting("Kimiko")); // => "Hello, Kimiko!"
   
   
-  //-----Q3-----
-  //解答
-  /**
-   * @param {"春"|"夏"|"秋"|"冬"} season - 現在の季節
-   * @param {"暖かい"|"暑い"|"涼しい"|"寒い"} temperature - 現在の気温
-   * @returns {"この季節の平均的な気温です。"|"この季節には珍しい気温です。"} 季節や気温に応じて変わる、気候に関する説明
-   */
-  function describeTheWeather(season, temperature) {
-    // ここにコードを書きましょう
-    if (season === "春") {
-      if (temperature === "暖かい") {
-        return "この季節の平均的な気温です。";
-      } else if (temperature === "寒い" || temperature === "暑い" || temperature === "涼しい") {
-        return "この季節には珍しい気温です。";
-      } else {
-        return "現在の気温について入力してください。";
-      }
-    } else if (season === "夏") {
-      if (temperature === "暑い") {
-        return "この季節の平均的な気温です。";
-      } else if (temperature === "暖かい" || temperature === "涼しい" || temperature === "寒い") {
-        return "この季節には珍しい気温です。";
-      } else {
-        return "現在の気温について入力してください。";
-      }
-    } else if (season === "秋") {
-      if (temperature === "涼しい") {
-        return "この季節の平均的な気温です。";
-      } else if (temperature === "暖かい" || temperature === "暑い" || temperature === "寒い") {
-        return "この季節には珍しい気温です。";
-      } else {
-        return "現在の気温について入力してください。";
-      }
-    } else if (season === "冬") {
-      if (temperature === "寒い") {
-        return "この季節の平均的な気温です。";
-      } else if (temperature === "暖かい" || temperature === "暑い" || temperature === "涼しい") {
-        return "この季節には珍しい気温です。";
-      } else {
-        return "現在の気温について入力してください。";
-      }
-    } else if (season !== "春" || season !== "夏" || season !== "秋" || season !== "冬"){
-      return "現在の季節を入力してください"
-    }
-  }
+//   //-----Q2-----
+//   //解答
+//   function average(num1, num2) {
+//     if (typeof num1 === "number" && typeof num2 === "number") {
+//       return (num1 + num2) /2;
+//     } else if (typeof num1 === "number" && typeof num2 !== "number") {
+//       return "数値を入力してください。（修正が必要な個所：" + num2 + " )"
+//     } else if (typeof num1 !== "number" && typeof num2 === "number") {
+//       return "数値を入力してください。（修正が必要な個所：" + num1 + " )"
+//     } else {
+//       return "数値を入力してください。（修正が必要な個所：" + num1 + "," + num2 + " )"
+//     }
+//   }
+  
+//   // テスト
+//   console.log(average(1, 2)); // => 1.5
+//   console.log(average(100, 300)); // => 200
   
   
-  // テスト
-  actual = describeTheWeather("春", "暖かい");
-  expected = "この季節の平均的な気温です。";
+//   //-----Q3-----
+//   //解答
+//   /**
+//    * @param {"春"|"夏"|"秋"|"冬"} season - 現在の季節
+//    * @param {"暖かい"|"暑い"|"涼しい"|"寒い"} temperature - 現在の気温
+//    * @returns {"この季節の平均的な気温です。"|"この季節には珍しい気温です。"} 季節や気温に応じて変わる、気候に関する説明
+//    */
+//   function describeTheWeather(season, temperature) {
+//     // ここにコードを書きましょう
+//     if (season === "春") {
+//       if (temperature === "暖かい") {
+//         return "この季節の平均的な気温です。";
+//       } else if (temperature === "寒い" || temperature === "暑い" || temperature === "涼しい") {
+//         return "この季節には珍しい気温です。";
+//       } else {
+//         return "現在の気温について入力してください。";
+//       }
+//     } else if (season === "夏") {
+//       if (temperature === "暑い") {
+//         return "この季節の平均的な気温です。";
+//       } else if (temperature === "暖かい" || temperature === "涼しい" || temperature === "寒い") {
+//         return "この季節には珍しい気温です。";
+//       } else {
+//         return "現在の気温について入力してください。";
+//       }
+//     } else if (season === "秋") {
+//       if (temperature === "涼しい") {
+//         return "この季節の平均的な気温です。";
+//       } else if (temperature === "暖かい" || temperature === "暑い" || temperature === "寒い") {
+//         return "この季節には珍しい気温です。";
+//       } else {
+//         return "現在の気温について入力してください。";
+//       }
+//     } else if (season === "冬") {
+//       if (temperature === "寒い") {
+//         return "この季節の平均的な気温です。";
+//       } else if (temperature === "暖かい" || temperature === "暑い" || temperature === "涼しい") {
+//         return "この季節には珍しい気温です。";
+//       } else {
+//         return "現在の気温について入力してください。";
+//       }
+//     } else if (season !== "春" || season !== "夏" || season !== "秋" || season !== "冬"){
+//       return "現在の季節を入力してください"
+//     }
+//   }
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
   
-  actual = describeTheWeather("春", "寒い");
-  expected = "この季節には珍しい気温です。";
+//   // テスト
+//   actual = describeTheWeather("春", "暖かい");
+//   expected = "この季節の平均的な気温です。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  // さらにテストを書いて、コードが正しいことを確認してください
-  actual = describeTheWeather("秋", "涼しい");
-  expected = "この季節の平均的な気温です。";
+//   actual = describeTheWeather("春", "寒い");
+//   expected = "この季節には珍しい気温です。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  actual = describeTheWeather("冬", "寒い");
-  expected = "この季節の平均的な気温です。";
+//   // さらにテストを書いて、コードが正しいことを確認してください
+//   actual = describeTheWeather("秋", "涼しい");
+//   expected = "この季節の平均的な気温です。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  actual = describeTheWeather("冬", "暑い");
-  expected = "この季節には珍しい気温です。";
+//   actual = describeTheWeather("冬", "寒い");
+//   expected = "この季節の平均的な気温です。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  actual = describeTheWeather(true , "熱い");
-  expected = "現在の季節を入力してください";
+//   actual = describeTheWeather("冬", "暑い");
+//   expected = "この季節には珍しい気温です。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  actual = describeTheWeather("冬", "love");
-  expected = "現在の気温について入力してください。";
+//   actual = describeTheWeather(true , "熱い");
+//   expected = "現在の季節を入力してください";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
   
-  actual = describeTheWeather("春", 100);
-  expected = "現在の気温について入力してください。";
+//   actual = describeTheWeather("冬", "love");
+//   expected = "現在の気温について入力してください。";
   
-  if (actual === expected) {
-    console.log("OK! Test PASSED.");
-  } else {
-    console.error("Test FAILED. Try again!");
-    console.log("    actual: ", actual);
-    console.log("  expected: ", expected);
-  }
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
+  
+//   actual = describeTheWeather("春", 100);
+//   expected = "現在の気温について入力してください。";
+  
+//   if (actual === expected) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//   }
 
 
 // // *** yuiha mochizuki ***
