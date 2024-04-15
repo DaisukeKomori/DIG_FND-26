@@ -192,6 +192,134 @@
 // この問題までたどり着けませんでした
 
 
+// 再提出
+
+// 'use strict'
+// // 1行目に記載している 'use strict' は削除しないでください
+
+// function test(actual, expected) {
+//   if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//     console.trace();
+//   }
+// }
+
+// // (1)関数 sayHelloToFriends を宣言してください。
+// /**
+//  * @param {Array<string>} name - 友達の名前が入った配列
+//  * @returns {Array<string>} 友達の名前それぞれに `"Hello"` の挨拶が付け加わった文字列を
+//  * 要素に持つ配列
+//  */
+// // ここにコードを書きましょう
+// function sayHelloToFriends (names) {
+//   const result = [];
+//   for (const name of names){
+//     result.push("Hello, " +  name + "!");
+//   }
+//   return result;
+// }
+
+// const friends = ["Mario", "Luigi"];
+// test(sayHelloToFriends(friends), ["Hello, Mario!", "Hello, Luigi!"]);
+// // // アドバイス： 新たに作成した 文字列（例： "Hello, Mario!"）を、
+// // // 返り値となる新しい配列に追加しましょう。
+
+// // 以下のテストではこれらの変数を使用します。
+// const obj1 = { a: "A" };
+// const obj2 = { a: "A", b: 2 };
+// const obj3 = { a: "A", b: 2, c: "C", d: true };
+// const obj4 = { a: "A", c: "C" };
+
+// // //(2) 関数 filterObjectForStrings を宣言してください。
+// // /**
+// //  * @param {object} オブジェクト
+// //  * @returns {{ [key: string]: string }} 引数で与えられたオブジェクトの、
+// //  * 値が文字列であるキーと値のペアだけを持つ新しいオブジェクト。
+// //  */
+// function filterObjectForStrings(object) {
+//   const result = {};
+//   for (const key in object){
+//     if (typeof object[key] === "string"){
+//       result[key] = object[key];
+//     }
+//   }
+//   return result;
+// }
+
+// // test(filterObjectForStrings(obj1), obj1); // 変化なし
+// // test(filterObjectForStrings(obj2), obj1); // 値が 2 のペアは含まれていない
+// // test(filterObjectForStrings(obj3), obj4); // 値が 2 や true のペアは含まれていない
+
+// // (3)関数 filterArrayForStrings を宣言してください。
+// // この関数内で、2 問目で作った関数 filterObjectForStrings を使いましょう。
+// /**
+//  * @param {Array<object>} arrayOfObjects - オブジェクトを要素に持つ配列
+//  * @returns {Array<{ [key: string]: string }>} 
+//  * 引数で与えられた配列内の各オブジェクトについて、
+//  * 値が文字列であるキーと値のペアのみを持つ新しいオブジェクトを作成し、
+//  * そのオブジェクトを含む新しい配列を返り値として返す。
+//  */
+// function filterArrayForStrings(arrayOfObjects) {
+//   // ここにコードを書きましょう.
+//   // どこかで関数 `filterObjectForStrings` を呼びましょう
+//   const resultarray = [];// 初期化
+//   let result;
+//   // 配列の中のオブジェクトを`filterObjectForStrings`に通す
+//   for (const obj of arrayOfObjects){
+//     result = filterObjectForStrings(obj);
+//     resultarray.push(result);
+//   }
+//   // trueのみ新しい配列に入れる
+//   return resultarray;
+// }
+
+// test(filterArrayForStrings([obj1]), [obj1]); // 変化なし
+
+// // 2 番目の要素から値が 2 のペアは除くこと
+// test(filterArrayForStrings([obj1, obj2]), [obj1, obj1]);
+
+// test(filterArrayForStrings([obj3, obj2, obj1]), [obj4, obj1, obj1]);
+
+// // (4)以下のコードを実行する前に何が表示されるか予想してみましょう。
+// // その後、コードを実行して予想が合っていたかどうかを確認してください。
+// // なぜこのような結果になるのか理由を説明してください。
+// const names = ["いち", "に", "さん", "よん"];
+
+// for (let i = 0; i < 4; i++) { //4回繰り返す
+//   for (let j = 0; j < names.length; j++) { //配列の要素の数を数える
+//     for (let k = 1; k < 3; k++) { //2回繰り返す
+//     console.log(names[j]); //それぞれの要素の値をコンソールに出す
+//     }
+//   }
+// }
+// // 予想：配列の各値を2回コンソールに出力するのを4回繰り返す
+// // 結果：予想と同じ
+
+// // (5)以下のコードは、複数のネストされたブロック内で同じ変数名 i を使用しています。
+// // コードを実行する前に何が表示されるか予想しましょう。
+// // その後、コードを実行して予想が合っていたかどうかを確認してください。
+// // なぜこのような結果になるのか理由を説明してください。
+// for (let i = 0; i < 2; i++) { //2回繰り返す
+//   console.log("a: " + i); //iに何の数字が入っているかをを"a: i"でコンソールに表示
+//   for (let i = 0; i < 2; i++) { //2回繰り返す
+//     console.log("b: " + i); //iに何の数字が入っているかをを"b: i"でコンソールに表示
+//     for (let i = 0; i < 2; i++) {//2回繰り返す
+//       console.log("c: " + i);//iに何の数字が入っているかをを"c: i"でコンソールに表示
+//     }
+//   }
+// }
+// // 予想：iに何の数字が入っているかを"a:""b:""c:"それぞれ2回表示する
+// // 結果：aの中にb、bの中にcがあるので①a表示②b表示③c表示（ループするので2回表示）
+// // ④ループしてbをもう一度表示⑤c表示（ループするので2回表示）⑥ループしてa表示⑦②～⑤をもう一度
+
+
+
+
+
 // // shohei_shiga
 
 // 'use strict'
