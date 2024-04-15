@@ -105,6 +105,122 @@
 // //
 
 
+
+// 再提出
+
+// 'use strict'
+// // 1行目に記載している 'use strict' は削除しないでください
+
+// //テスト用TDD関数宣言
+// function test(actual, expected) {
+//   if (JSON.stringify(actual) === JSON.stringify(expected)) {
+//     console.log("OK! Test PASSED.");
+//   } else {
+//     console.error("Test FAILED. Try again!");
+//     console.log("    actual: ", actual);
+//     console.log("  expected: ", expected);
+//     console.trace();
+//   }
+// }
+
+// /**
+//  * @param {Array<string>} nameArr - 友達の名前が入った配列
+//  * @returns {Array<string>} 友達の名前それぞれに `"Hello"` の挨拶が付け加わった文字列を要素に持つ配列
+//  */
+// // ここにコードを書きましょう
+// function sayHelloToFriends (nameArr) {
+//   const resultArr = [] ;
+//   for (const val of nameArr) {
+//     resultArr.push("Hello, " + val + "!") ;
+//   }
+//   return resultArr ;
+// }
+
+
+// const friends = ["Mario", "Luigi"];
+// test(sayHelloToFriends(friends), ["Hello, Mario!", "Hello, Luigi!"]);
+
+// const obj1 = { a: "A" };
+// const obj2 = { a: "A", b: 2 };
+// const obj3 = { a: "A", b: 2, c: "C", d: true };
+// const obj4 = { a: "A", c: "C" };
+
+// /**
+//  * @param {object} オブジェクト
+//  * @returns {{ [key: string]: string }} 引数で与えられたオブジェクトの、値が文字列であるキーと値のペアだけを持つ新しいオブジェクト。
+//  */
+// function filterObjectForStrings(object) {
+//   // ここにコードを書きましょう
+//   const resultObj = {} ;
+//   for (const val in object) {
+//     if (typeof object[val] === "string") {
+//       resultObj[val] = object[val] ;
+//     }
+//   }
+//   return resultObj ;
+// }
+
+// test(filterObjectForStrings(obj1), obj1); // 変化なし
+// test(filterObjectForStrings(obj2), obj1); // 値が 2 のペアは含まれていない
+// test(filterObjectForStrings(obj3), obj4); // 値が 2 や true のペアは含まれていない
+
+
+// /**
+//  * @param {Array<object>} arrayOfObjects - オブジェクトを要素に持つ配列
+//  * @returns {Array<{ [key: string]: string }>} 引数で与えられた配列内の各オブジェクトについて、値が文字列であるキーと値のペアのみを持つ新しいオブジェクトを作成し、そのオブジェクトを含む新しい配列を返り値として返す。
+//  */
+// function filterArrayForStrings(arrayOfObjects) {
+//   // ここにコードを書きましょう.
+//   // どこかで関数 `filterObjectForStrings` を呼びましょう
+//   const resultArr = [] ;
+//   for (const val of arrayOfObjects) {
+//     resultArr.push(filterObjectForStrings(val)) ;
+//   }
+//   return resultArr ;
+// }
+
+// test(filterArrayForStrings([obj1]), [obj1]); // 変化なし
+
+// // 2 番目の要素から値が 2 のペアは除くこと
+// test(filterArrayForStrings([obj1, obj2]), [obj1, obj1]);
+
+// test(filterArrayForStrings([obj3, obj2, obj1]), [obj4, obj1, obj1]);
+
+
+// const names = ["いち", "に", "さん", "よん"];
+
+// for (let i = 0; i < 4; i++) {
+//   for (let j = 0; j < names.length; j++) {
+//     for (let k = 1; k < 3; k++) {
+//     console.log(names[j]);
+//     }
+//   }
+// }
+// //提出フォームにて記入
+// // 一回目のforループは二回目のforループの処理が終わる毎に、二回目のforループは三回目のforループの処理が終わる毎にループをしてった結果が出ると予想し、結果は合っていました。
+// // 1.　一回目のforループは処理する毎に変数「i」が+1、「i < 4」条件によって変数「i」が数値3になるまで繰り返すように条件付けされています。そして中身は二回目のforループ処理を行われています。 
+// // ２.　二回目のforループは処理する毎に変数「j」が+1、「j < namesの要素数（この場合4）」条件によって変数「j」が数値4になるまで繰り返すように条件付けされ、中身は三回目のforループ処理を行われています。
+// // 3.　三回目のforループは処理する毎に変数「k」が+1、「k < 3」条件によって変数「k」が数値2になるまで繰り返しています（この場合は「k」の値が1なので、1と2のみループ）中身はコンソールに「names[j]」を出力するようにしています。
+// // コンソールの結果は以上の処理によって出力されています。
+
+// for (let i = 0; i < 2; i++) {
+//   console.log("a: " + i);
+//   for (let i = 0; i < 2; i++) {
+//     console.log("b: " + i);
+//     for (let i = 0; i < 2; i++) {
+// 　    console.log("c: " + i);
+//     }
+//   }
+// }
+// //提出フォームにて記入
+// // 文字列の"a: "や"b: "、"c: "にforループで繰り返された数字と連結した結果が出てくると予想し、結果は合っていました。
+// // 一回目のforループは変数「i」を"a: "と連結させたものをコンソールに出力をする処理を行っています。二回目と三回目のforループの処理を終えたら「i+1」にして再度処理しています。
+// // 二回目のforループは変数「i」を"b: "と連結させたものをコンソールに出力し、三回目のforループへと進んでいきます。
+// // 三回目のforループは変数「i」を"c: "と連結させたものをコンソールに出力し、処理を終了したら一回目のforループに戻っていき、繰り返し処理が終わるまで繰り返しています。
+// // 以上により、コンソールの結果通りになりました。
+
+
+
 // // yuiha_mochizuki
 
 // 'use strict'
@@ -315,8 +431,6 @@
 // // 予想：iに何の数字が入っているかを"a:""b:""c:"それぞれ2回表示する
 // // 結果：aの中にb、bの中にcがあるので①a表示②b表示③c表示（ループするので2回表示）
 // // ④ループしてbをもう一度表示⑤c表示（ループするので2回表示）⑥ループしてa表示⑦②～⑤をもう一度
-
-
 
 
 
